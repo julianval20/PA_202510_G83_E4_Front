@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nombre": "Café Orgánico de Nariño",
+    "categoria": "Bebidas",
+    "precio": 25000,
+    "foto": "https://cafearabo.com/wp-content/uploads/2024/01/paquete-cafe-en-grano-Atelier-mezcla-natural.jpg",
+    "descripcion": "Café cultivado en las montañas de Nariño, 100% orgánico y de aroma intenso. Ideal para quienes valoran un sabor auténtico y sostenible."
+  },
+  {
+    "id": 2,
+    "nombre": "Panela Artesanal",
+    "categoria": "Alimentos",
+    "precio": 10000,
+    "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdzqcu7O9gFREybWXWPMzvh8xUInfuVD3Zcw&s",
+    "descripcion": "Bloques de panela elaborados artesanalmente por familias campesinas del Huila. Dulce natural y sin aditivos, ideal para bebidas o postres."
+  },
+  {
+    "id": 3,
+    "nombre": "Canasto de Palma Iraca",
+    "categoria": "Artesanías",
+    "precio": 35000,
+    "foto": "https://artesaniasdecolombiatienda.com.co/wp-content/uploads/2023/12/02-02-640-E_vista1-1.jpg",
+    "descripcion": "Hecho a mano por artesanas del Caribe colombiano. Ideal para decorar o almacenar productos con estilo tradicional y cultural."
+  },
+  {
+    "id": 4,
+    "nombre": "Miel de Abeja Natural",
+    "categoria": "Alimentos Procesados",
+    "precio": 18000,
+    "foto": "https://berrybloom.com.co/wp-content/uploads/2020/11/BERRYBLOOM-32-scaled.jpg",
+    "descripcion": "Recolectada en apiarios del Tolima. Miel pura sin aditivos, perfecta para endulzar de forma natural y fortalecer tus defensas."
+  },
+  {
+    "id": 5,
+    "nombre": "Fríjol Cargamanto",
+    "categoria": "Legumbres",
+    "precio": 12000,
+    "foto": "https://terrapremiummarket.co/wp-content/uploads/2024/02/frijoles.webp",
+    "descripcion": "Cultivado sin pesticidas en Boyacá. Grano seleccionado y empacado por manos campesinas."
+  },
+  {
+    "id": 6,
+    "nombre": "Sombrero Vueltiao Tradicional",
+    "categoria": "Artesanías",
+    "precio": 50000,
+    "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNNfKdYEUJ9kl8XR_kQjY4qsHNN4fxq3QpVg&s",
+    "descripcion": "Símbolo del folclor colombiano, hecho a mano por artesanos de Córdoba. Ideal para llevar con orgullo nuestra cultura."
+  }
+]
