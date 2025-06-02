@@ -9,10 +9,12 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <img src={logo} alt="Kapchy Market Logo" className="logo" />
+        <Link to="/">
+          <img src={logo} alt="Kapchy Market Logo" className="logo" />
+        </Link>
         <ul className="nav-links">
           <li><Link to="/tienda">TIENDA</Link></li>
-          <li><a href="#">PRODUCTORES</a></li>
+          <li><Link to="/productores">PRODUCTORES</Link></li>
           <li><a href="#">¿QUIÉNES SOMOS?</a></li>
         </ul>
       </div>
