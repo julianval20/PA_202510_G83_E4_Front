@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../Images/logo.png";
 import iniciarSesion from "../Images/iniciarsesion.png";
+import carrito from "../Images/Carrito.png"; // Importa la imagen del carrito
 
 function Navbar() {
   return (
@@ -22,6 +23,9 @@ function Navbar() {
         <img src={iniciarSesion} alt="Iniciar Sesión" className="icono-user" />
         <a href="#">Iniciar Sesión</a>
         <a href="#">Registrarse</a>
+        <a href="#">
+          <img src={carrito} alt="Carrito de Compras" className="icono-carrito" />
+        </a>
       </div>
     </nav>
   );

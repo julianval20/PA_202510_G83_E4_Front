@@ -1,3 +1,4 @@
+/* --- Contenedor general --- */
 .productos-container {
   background-color: #d5cea3;
   min-height: 100vh;
@@ -5,6 +6,7 @@
   box-sizing: border-box;
 }
 
+/* --- Título principal --- */
 .productos-titulo {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -13,6 +15,7 @@
   font-family: 'Maven Pro', sans-serif;
 }
 
+/* --- Filtros y búsqueda --- */
 .productos-filtros {
   display: flex;
   justify-content: center;
@@ -37,7 +40,7 @@
   background-color: white;
 }
 
-/* Tarjetas de productos */
+/* --- Grid de productos --- */
 .productos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -45,6 +48,7 @@
   box-sizing: border-box;
 }
 
+/* --- Card de producto --- */
 .producto-card {
   background-color: #a06c3f;
   color: white;
@@ -63,6 +67,7 @@
   margin-bottom: 1rem;
 }
 
+/* --- Imagen del producto --- */
 .producto-img {
   width: 100%;
   height: 180px;
@@ -71,12 +76,28 @@
   margin-bottom: 1rem;
 }
 
+/* --- Placeholder para imagen faltante --- */
+.producto-img-placeholder {
+  width: 100%;
+  height: 180px;
+  background-color: #ccc;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* --- Estrellas (si usas ratings) --- */
 .estrellas {
   font-size: 1.2rem;
   color: black;
   margin: 0.5rem 0;
 }
 
+/* --- Precio y descripción --- */
 .precio {
   font-size: 1rem;
   font-weight: bold;
@@ -88,3 +109,129 @@
   line-height: 1.5;
 }
 
+/* --- Botones dentro de la card --- */
+.botones-producto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+/* --- Botón de añadir al carrito --- */
+.boton-carrito {
+  background-color: #3c2a21;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Maven Pro', sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.boton-carrito:hover {
+  background-color: #2f211a;
+}
+
+/* --- Link tipo botón "Ver más" --- */
+.boton-info {
+  background-color: #d5cea3;
+  color: #333;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-family: 'Maven Pro', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.boton-info:hover {
+  background-color: #c4b991;
+}
+
+/* --- Vista Detallada --- */
+.producto-detail-container {
+  background-color: #d5cea3;
+  min-height: 100vh;
+  padding: 8rem 4rem 4rem;
+  box-sizing: border-box;
+  display: flex;
+  gap: 3rem;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.producto-detail-left {
+  flex: 1;
+  max-width: 50%;
+  margin-top: 1rem;
+}
+
+.producto-detail-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.producto-detail-right {
+  flex: 1;
+  background-color: #a06c3f;
+  padding: 2rem;
+  border-radius: 2rem;
+  color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #3c2a21;
+  margin-top: 1rem;
+}
+
+.producto-detail-right h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.estrellas {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.comentario {
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.btn-calificar,
+.btn-volver {
+  background-color: #3c2a21;
+  color: white;
+  border: none;
+  padding: 0.7rem 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-calificar:hover,
+.btn-volver:hover {
+  background-color: #5a3a2b;
+}

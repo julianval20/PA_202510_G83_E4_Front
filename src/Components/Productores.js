@@ -9,7 +9,7 @@ function Productores() {
 
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/UDFJDC-ProgramacionAvanzada/PA_202510_G83_E4_Front/refs/heads/main/src/Mocks/Productores.js"
+      "https://raw.githubusercontent.com/DominicRobayod/PA_202510_G83_E4_Front/refs/heads/main/src/Mocks/Productores.js"
     )
       .then((res) => res.json())
       .then((data) => setProductores(data));
