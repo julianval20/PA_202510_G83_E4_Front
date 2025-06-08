@@ -1,16 +1,20 @@
-// src/Components/ProductorDetail.js
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { FormattedMessage, useIntl } from "react-intl";
 import "./Productores.css";
 
 function ProductorDetail() {
   const { productorId } = useParams();
   const [productor, setProductor] = useState(null);
+  const intl = useIntl();
 
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/UDFJDC-ProgramacionAvanzada/PA_202510_G83_E4_Front/refs/heads/main/src/Mocks/Productores.json"
-    )
+    const userLang = navigator.language || navigator.userLanguage;
+    const url = userLang.startsWith("es")
+      ? "https://raw.githubusercontent.com/UDFJDC-ProgramacionAvanzada/PA_202510_G83_E4_Front/refs/heads/main/src/Mocks/Productores.json"
+      : "https://raw.githubusercontent.com/DominicRobayod/PA_202510_G83_E4_Front/refs/heads/main/src/Mocks/EnProductores.json";
+
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         const found = data.find((p) => p.id === parseInt(productorId));
@@ -37,14 +41,17 @@ function ProductorDetail() {
           </div>
         )}
         <h2>{productor.nombre}</h2>
-        <p><strong>Ubicación:</strong> {productor.ubicacion}</p>
+        <p>
+          <strong><FormattedMessage id="productores.ubicacion" />:</strong> {productor.ubicacion}
+        </p>
         <p>{productor.descripcion}</p>
         <Link to="/productores" className="btn-volver">
-          Volver
+          <FormattedMessage id="productores.volver" />
         </Link>
       </div>
+
       <div className="productor-detail-right">
-        <h3>Calificar Productor</h3>
+        <h3><FormattedMessage id="productores.calificar" /></h3>
         <div className="estrellas">
           {[1, 2, 3, 4, 5].map((star) => (
             <span key={star}>⭐</span>
@@ -52,9 +59,11 @@ function ProductorDetail() {
         </div>
         <textarea
           className="comentario"
-          placeholder="Escribe tu comentario aquí..."
+          placeholder={intl.formatMessage({ id: "productores.comentario.placeholder" })}
         ></textarea>
-        <button className="btn-calificar">Enviar Calificación</button>
+        <button className="btn-calificar">
+          <FormattedMessage id="productores.calificar.boton" />
+        </button>
       </div>
     </div>
   );
