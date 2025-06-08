@@ -1,4 +1,4 @@
-// src/Components/ProductoCard.js
+// src/Components/Productos.js
 import React, { useEffect, useState } from "react";
 import ProductoCard from "./ProductoCard";
 import "./Productos.css";
@@ -7,12 +7,31 @@ function Productos() {
   const [productos, setProductos] = useState([]);
   const [busqueda, setBusqueda] = useState("");
   const [ordenPrecio, setOrdenPrecio] = useState("none");
+  const [carrito, setCarrito] = useState([]);
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/UDFJDC-ProgramacionAvanzada/PA_202510_G83_E4_Front/refs/heads/main/src/Mocks/Productos.json")
+    fetch(
+      "https://raw.githubusercontent.com/UDFJDC-ProgramacionAvanzada/PA_202510_G83_E4_Front/refs/heads/main/src/Mocks/Productos.json"
+    )
       .then((res) => res.json())
       .then((data) => setProductos(data));
+
+    const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
+    setCarrito(carritoGuardado);
   }, []);
+
+  const agregarAlCarrito = (producto, cantidad) => {
+    const index = carrito.findIndex((item) => item.id === producto.id);
+    let nuevoCarrito;
+    if (index !== -1) {
+      nuevoCarrito = [...carrito];
+      nuevoCarrito[index].cantidad += cantidad;
+    } else {
+      nuevoCarrito = [...carrito, { ...producto, cantidad }];
+    }
+    setCarrito(nuevoCarrito);
+    localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+  };
 
   const filtrarProductos = () => {
     let filtrados = productos.filter((producto) => {
@@ -35,7 +54,6 @@ function Productos() {
   return (
     <div className="productos-container">
       <h2 className="productos-titulo">Productos</h2>
-
       <div className="productos-filtros">
         <input
           type="text"
@@ -44,7 +62,6 @@ function Productos() {
           onChange={(e) => setBusqueda(e.target.value)}
           className="input-busqueda"
         />
-
         <select
           value={ordenPrecio}
           onChange={(e) => setOrdenPrecio(e.target.value)}
@@ -55,10 +72,13 @@ function Productos() {
           <option value="desc">Mayor a menor</option>
         </select>
       </div>
-
       <section className="productos">
         {filtrarProductos().map((producto) => (
-          <ProductoCard key={producto.id} producto={producto} />
+          <ProductoCard
+            key={producto.id}
+            producto={producto}
+            agregarAlCarrito={agregarAlCarrito}
+          />
         ))}
       </section>
     </div>

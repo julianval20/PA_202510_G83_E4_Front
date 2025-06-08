@@ -1,4 +1,3 @@
-// src/Components/Navbar.js
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
@@ -23,9 +22,9 @@ function Navbar() {
         <img src={iniciarSesion} alt="Iniciar Sesión" className="icono-user" />
         <a href="#">Iniciar Sesión</a>
         <a href="#">Registrarse</a>
-        <a href="#">
+        <Link to="/carrito">
           <img src={carrito} alt="Carrito de Compras" className="icono-carrito" />
-        </a>
+        </Link>
       </div>
     </nav>
   );
