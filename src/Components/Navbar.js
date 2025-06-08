@@ -1,9 +1,11 @@
+// src/Components/Navbar.js
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../Images/logo.png";
 import iniciarSesion from "../Images/iniciarsesion.png";
-import carrito from "../Images/Carrito.png"; // Importa la imagen del carrito
+import carrito from "../Images/Carrito.png";
+
 
 function Navbar() {
   return (
@@ -20,9 +22,9 @@ function Navbar() {
       </div>
       <div className="navbar-right">
         <img src={iniciarSesion} alt="Iniciar Sesión" className="icono-user" />
-        <a href="#">Iniciar Sesión</a>
-        <a href="#">Registrarse</a>
-        <Link to="/carrito">
+        <Link to="#">Iniciar Sesión</Link>
+        <Link to="/registro">Registrarse</Link>
+        <Link to="#">
           <img src={carrito} alt="Carrito de Compras" className="icono-carrito" />
         </Link>
       </div>
