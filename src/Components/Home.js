@@ -1,5 +1,7 @@
+// src/Components/Home.js
 import React from "react";
-import { Link } from "react-router-dom"; // 👈 Importamos Link
+import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl"; // 👈 Importar FormattedMessage
 import artesanos from "../Images/artesanos.png";
 import "./Home.css";
 
@@ -12,17 +14,23 @@ function Home() {
       </div>
 
       <div className="home-right">
-        <h2>¿Qué es <strong>Kapchy Market</strong>?</h2>
-        <p>Es el puente entre el campo colombiano y tu hogar.</p>
+        <h2>
+          <FormattedMessage id="home.title" />{" "}
+          <strong>Kapchy Market</strong>
+        </h2>
         <p>
-          Apoyamos a nuestros campesinos conectándolos directamente con quienes
-          valoran sus productos únicos, naturales y llenos de historia.
+          <FormattedMessage id="home.subtitle" />
+        </p>
+        <p>
+          <FormattedMessage id="home.description" />
         </p>
         <div className="btns-container">
           <Link to="/tienda" className="btn-compra">
-            Ver los productos
+            <FormattedMessage id="home.button.products" />
           </Link>
-          <button className="btn-compra">Vender un producto</button>
+          <button className="btn-compra">
+            <FormattedMessage id="home.button.sell" />
+          </button>
         </div>
       </div>
     </section>

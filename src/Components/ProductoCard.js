@@ -1,6 +1,7 @@
 // src/Components/ProductoCard.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl"; // 👈 Importamos traducción
 import "./Productos.css";
 
 function ProductoCard({ producto, agregarAlCarrito }) {
@@ -20,7 +21,7 @@ function ProductoCard({ producto, agregarAlCarrito }) {
     <div className="producto-card">
       <h3>{producto.nombre}</h3>
       <p className="categoria">
-        <strong>Categoría:</strong> {producto.categoria}
+        <strong><FormattedMessage id="productos.categoria" />:</strong> {producto.categoria}
       </p>
       <img
         src={producto.foto}
@@ -33,18 +34,17 @@ function ProductoCard({ producto, agregarAlCarrito }) {
 
       <div className="botones-producto">
         <button className="boton boton-carrito" onClick={abrirModal}>
-          Añadir al carrito
+          <FormattedMessage id="productos.agregarCarrito" />
         </button>
         <Link to={`/productos/${producto.id}`} className="boton boton-info">
-          Ver más información
+          <FormattedMessage id="productos.verMas" />
         </Link>
       </div>
 
-      {/* Modal simple */}
       {mostrarModal && (
         <div className="modal">
           <div className="modal-contenido">
-            <h3>¿Cuántos deseas añadir?</h3>
+            <h3><FormattedMessage id="productos.modal.titulo" /></h3>
             <input
               type="number"
               min="1"
@@ -53,10 +53,10 @@ function ProductoCard({ producto, agregarAlCarrito }) {
             />
             <div className="modal-botones">
               <button className="boton-carrito" onClick={handleAgregar}>
-                Confirmar
+                <FormattedMessage id="productos.modal.confirmar" />
               </button>
               <button className="boton-info" onClick={cerrarModal}>
-                Cancelar
+                <FormattedMessage id="productos.modal.cancelar" />
               </button>
             </div>
           </div>
