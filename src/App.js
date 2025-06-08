@@ -6,20 +6,22 @@ import Productos from "./Components/Productos";
 import Productores from "./Components/Productores";
 import ProductorDetail from "./Components/ProductorDetail";
 import ProductoDetail from "./Components/ProductoDetail";
-import Carrito from "./Components/Carrito"; // 👈 Importa el nuevo componente
+import Carrito from "./Components/Carrito"; // Importa el nuevo componente
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-   <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/tienda" element={<Productos />} />
-  <Route path="/productores" element={<Productores />} />
-  <Route path="/productores/:productorId" element={<ProductorDetail />} />
-  <Route path="/productos/:productoId" element={<ProductoDetail />} />
-  <Route path="/registro" element={<Registro />} />
-</Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tienda" element={<Productos />} />
+        <Route path="/productores" element={<Productores />} />
+        <Route path="/productores/:productorId" element={<ProductorDetail />} />
+        <Route path="/productos/:productoId" element={<ProductoDetail />} />
+        <Route path="/registro" element={<Registro />} />
+        {/* NUEVA RUTA: Agrega esta línea para el componente Carrito */}
+        <Route path="/carrito" element={<Carrito />} />
+      </Routes>
     </BrowserRouter>
   );
 }
